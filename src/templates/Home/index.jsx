@@ -9,6 +9,8 @@ export class Home extends Component {
   state = {
     posts: [],
     allPosts: [],
+    page: 0,
+    pagesPerPage: 2,
   };
 
   async componentDidMount() {
@@ -16,9 +18,10 @@ export class Home extends Component {
   }
 
   loadPosts = async () => {
+    const {page, pagesPerPage} = this.state;
     const postsAndPhotos = await loadPosts();
     this.setState({
-       posts: postsAndPhotos,
+      posts: postsAndPhotos.slice(page, pagesPerPage),
       allPosts: postsAndPhotos,
       });
   }
