@@ -1,0 +1,17 @@
+.button{
+    width: 200px;
+    background-color: rgb(18, 11, 75);
+    color: white;
+    border: none;
+    padding: 2%;
+    margin-top: 2%;
+    cursor: pointer;
+}
+.button:disabled{
+    background-color: rgb(234, 227, 227);
+    color: black;
+    border: none;
+    padding: 2%;
+    margin-top: 2%;
+    cursor: not-allowed;
+}
